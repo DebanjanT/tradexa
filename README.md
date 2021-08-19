@@ -1,5 +1,6 @@
 # Tradexa Internship Task
 ## _by Debanjan Tewary_
+###  i apologize that i have written all the code with the company name Tredexa rather than Tradexa, i read it wrong, however if you run the code i have written Tradexa at all frontend element, Thank You 💗!
 
 
  |Problem:  | 

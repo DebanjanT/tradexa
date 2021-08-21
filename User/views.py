@@ -44,17 +44,17 @@ def login_view(request, *args, **kwargs):
     user = request.user
     if user.is_authenticated:
         return redirect("home")
+    else:
+        if request.method == 'POST':
+                username = request.POST.get('username')
+                password = request.POST.get('password')
 
-    if request.method == 'POST':
-            username = request.POST.get('username')
-            password = request.POST.get('password')
-
-            user = authenticate(request, username=username, password=password)
-            if user is not None:
-                login(request, user)
-                return redirect('home')
-            else:
-                return redirect('register')
+                user = authenticate(request, username=username, password=password)
+                if user is not None:
+                    login(request, user)
+                    return redirect('home')
+                else:
+                    return redirect('register')
 
     return render(request, 'user/login.html')
 
@@ -86,7 +86,6 @@ def PostCreateView(request):
 
 
 
-@login_required(login_url='login')
 def home(request):
     posts = Post.objects.all()
     users = User.objects.all()

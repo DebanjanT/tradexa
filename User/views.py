@@ -56,7 +56,7 @@ def login_view(request, *args, **kwargs):
                 else:
                     return redirect('register')
 
-    return render(request, 'user/login.html')
+    return render(request, 'User/login.html')
 
 @login_required(login_url='login')
 def PostCreateView(request):
